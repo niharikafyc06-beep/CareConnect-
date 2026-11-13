@@ -1,0 +1,599 @@
+
+/* =================================
+   CARECONNECT PROFESSIONAL FINDER
+================================= */
+
+.nurse-finder {
+  width: 100%;
+  padding: 85px 7%;
+  background: linear-gradient(180deg, #f0f9f7 0%, #ffffff 100%);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.nurse-finder * {
+  box-sizing: border-box;
+}
+
+/* Heading */
+
+.finder-heading {
+  max-width: 850px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.finder-heading > span {
+  display: inline-block;
+  color: #087f78;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  margin-bottom: 14px;
+}
+
+.finder-heading h2 {
+  color: #153d39;
+  font-size: clamp(28px, 4vw, 43px);
+  line-height: 1.2;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.finder-heading p {
+  color: #687f7b;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Search form */
+
+.finder-form {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e0eeea;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(18, 75, 67, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: end;
+  gap: 18px;
+}
+
+.finder-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.finder-form label {
+  color: #244a45;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.finder-form input,
+.finder-form select {
+  width: 100%;
+  height: 49px;
+  padding: 0 15px;
+  border: 1px solid #d9e8e4;
+  border-radius: 10px;
+  background: #f9fcfb;
+  color: #173b3a;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.finder-form input:focus,
+.finder-form select:focus {
+  border-color: #087f78;
+  box-shadow: 0 0 0 3px rgba(8, 127, 120, 0.1);
+  background: #ffffff;
+}
+
+.finder-form button {
+  height: 49px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: none;
+  border-radius: 10px;
+  background: #087f78;
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.finder-form button:hover {
+  background: #06635e;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(8, 127, 120, 0.2);
+}
+
+.finder-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+/* Error message */
+
+.finder-error {
+  max-width: 950px;
+  margin: 20px auto;
+  padding: 14px;
+  border-radius: 10px;
+  background: #fff0ef;
+  color: #bd3931;
+  text-align: center;
+}
+
+/* Empty search state */
+
+.finder-empty {
+  max-width: 950px;
+  margin: 35px auto 0;
+  padding: 42px 20px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e5efec;
+  border-radius: 16px;
+}
+
+.finder-empty svg {
+  color: #087f78;
+  margin-bottom: 12px;
+}
+
+.finder-empty h3 {
+  color: #173b3a;
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.finder-empty p {
+  color: #758985;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Results section */
+
+.nurse-results {
+  max-width: 1150px;
+  margin: 55px auto 0;
+}
+
+.results-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.results-heading span {
+  color: #087f78;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.results-heading h3 {
+  color: #173b3a;
+  font-size: 26px;
+  margin: 8px 0 0;
+}
+
+.results-heading > p {
+  color: #718680;
+  font-size: 13px;
+}
+
+/* Professional cards */
+
+.nurse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.nurse-card {
+  min-width: 0;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e3eeeb;
+  border-radius: 17px;
+  box-shadow: 0 7px 25px rgba(20, 70, 65, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nurse-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(20, 70, 65, 0.1);
+}
+
+.profile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.nurse-avatar {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #d7f3eb, #b6e5d8);
+  color: #08766e;
+  font-size: 18px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.availability {
+  padding: 7px 11px;
+  border-radius: 30px;
+  background: #e9f7f0;
+  color: #16834e;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nurse-card h3 {
+  color: #173b3a;
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.qualification {
+  color: #718680;
+  font-size: 13px;
+  margin: 0 0 18px;
+}
+
+.nurse-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid #edf2f0;
+  border-bottom: 1px solid #edf2f0;
+}
+
+.nurse-details span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #58716c;
+  font-size: 12px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 17px 0;
+}
+
+.skills-list span {
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: #edf7f5;
+  color: #28746b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.match-score strong {
+  color: #087f78;
+  font-size: 24px;
+}
+
+.match-score span {
+  color: #81918d;
+  font-size: 12px;
+}
+
+.match-reason {
+  color: #718680;
+  font-size: 12px;
+  line-height: 1.6;
+  min-height: 38px;
+}
+
+.profile-button {
+  width: 100%;
+  min-height: 45px;
+  margin-top: 12px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: none;
+  border-radius: 9px;
+  background: #087f78;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-button:hover {
+  background: #06635e;
+}
+
+/* Demo disclaimer */
+
+.demo-notice {
+  margin: 25px auto 0;
+  padding: 14px;
+  max-width: 850px;
+  border-radius: 9px;
+  background: #fff8e8;
+  color: #896a2e;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Profile modal */
+
+.profile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(12, 36, 34, 0.65);
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+}
+
+.profile-modal {
+  position: relative;
+  width: 100%;
+  max-width: 490px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: #eff6f4;
+  color: #315b54;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #dceee9;
+}
+
+.large-avatar {
+  width: 68px;
+  height: 68px;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.profile-modal > h2 {
+  color: #173b3a;
+  font-size: 25px;
+  margin: 0 0 5px;
+}
+
+.profile-modal > p {
+  color: #718680;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.modal-details {
+  margin: 18px 0;
+  padding: 13px;
+  border-radius: 10px;
+  background: #f3f9f7;
+}
+
+.modal-details p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #496761;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.modal-details svg {
+  color: #087f78;
+}
+
+.profile-modal h4 {
+  color: #244a45;
+  margin-bottom: 8px;
+}
+
+.profile-modal hr {
+  border: none;
+  border-top: 1px solid #e7efed;
+  margin: 22px 0;
+}
+
+.booking-title {
+  color: #173b3a;
+  font-size: 20px;
+  margin: 0 0 7px;
+}
+
+.booking-subtitle {
+  margin-bottom: 18px;
+  line-height: 1.6;
+  color: #718680;
+  font-size: 13px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.booking-form label {
+  color: #294c48;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dce9e7;
+  border-radius: 9px;
+  background: #fbfdfd;
+  color: #173b3a;
+  outline: none;
+  font: inherit;
+  font-size: 14px;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  border-color: #087f78;
+  box-shadow: 0 0 0 3px rgba(8, 127, 120, 0.08);
+}
+
+.booking-form textarea {
+  resize: vertical;
+}
+
+.booking-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.booking-success {
+  padding: 13px;
+  margin-top: 15px;
+  border-radius: 9px;
+  background: #e5f6f0;
+  color: #087f62 !important;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.booking-error {
+  padding: 13px;
+  margin-top: 15px;
+  border-radius: 9px;
+  background: #fff0ef;
+  color: #c0392b !important;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.booking-placeholder {
+  margin-top: 17px;
+  color: #85938f !important;
+  font-size: 11px !important;
+  line-height: 1.7;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 900px) {
+  .nurse-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .finder-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .finder-form button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .nurse-finder {
+    padding: 55px 5%;
+  }
+
+  .finder-heading h2 {
+    font-size: 29px;
+  }
+
+  .finder-heading p {
+    font-size: 14px;
+  }
+
+  .finder-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .finder-form button {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .nurse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-modal {
+    padding: 23px;
+  }
+}
