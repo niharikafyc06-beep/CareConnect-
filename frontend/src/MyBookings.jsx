@@ -3,8 +3,7 @@ import { useState } from "react";
 import { Search, CalendarDays, ClipboardList } from "lucide-react";
 import "./MyBookings.css";
 
-const API_URL = "http://127.0.0.1:8000";
-
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 function MyBookings() {
   const [phone, setPhone] = useState("");
   const [bookings, setBookings] = useState([]);
